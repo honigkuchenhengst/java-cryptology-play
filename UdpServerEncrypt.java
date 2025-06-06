@@ -27,7 +27,7 @@ public class UdpServerEncrypt extends Thread{
             DatagramPacket response = new DatagramPacket(buffer, buffer.length, address, port);
             String received = new String(packet.getData(), 0, packet.getLength());
             Krypto krypto = new Krypto();
-            krypto.caesar(received, 5);
+            //krypto.caesar(received, 5);
             response.setData(krypto.caesar(received, 5).getBytes());
             try {
                 socket.send(response);
